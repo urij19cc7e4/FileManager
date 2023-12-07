@@ -1,0 +1,26 @@
+@startuml Component Diagram
+
+package "Frontend" {
+  [User Interface] as UI
+  UI --> [Drive Box]
+  UI --> [Dir Box]
+  UI --> [Info Box]
+  UI --> [Dir Tab]
+}
+
+package "Backend" {
+  [Directories]
+  [Drives]
+  [Files]
+  [File Info Cached] as FIC
+}
+
+package "WinAPI" {
+   [Windows API] as WAPI
+}
+
+FIC --> WinAPI
+Frontend --> Backend
+Backend --> Frontend 
+
+@enduml

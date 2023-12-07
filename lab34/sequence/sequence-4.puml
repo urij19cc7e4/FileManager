@@ -1,0 +1,29 @@
+@startuml
+
+autonumber
+actor User
+participant "Frontend" as Frontend
+participant "Backend" as Backend
+participant "WinAPI" as WinAPI
+
+User -> Frontend: Клик на строку поиска
+
+activate Frontend
+Frontend --> User: Курсор появляется в строке поиска
+User --> Frontend: Ввод поисковой строки
+User --> Frontend: Нажатие Enter
+Frontend --> Backend: Найти файлы и папки по имени
+
+activate Backend
+Backend --> WinAPI: Найти файлы и папки по имени
+
+activate WinAPI
+WinAPI --> Backend: Файлы и папки
+deactivate WinAPI
+
+Backend --> Frontend: Файлы и папки
+deactivate Backend
+
+Frontend --> User: Файлы и папки
+deactivate Frontend
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+
+autonumber
+actor User
+participant "Frontend" as Frontend
+participant "Backend" as Backend
+participant "WinAPI" as WinAPI
+
+User -> Frontend: Двойной клик по файлу
+
+activate Frontend
+Frontend --> Backend: Открыть файл
+
+activate Backend
+Backend --> WinAPI: Найти программу для открытия файла
+
+activate WinAPI
+WinAPI --> Backend: Программа для открытия файла
+deactivate WinAPI
+
+Backend --> Frontend: Программа для открытия файла
+
+Frontend --> Backend: Открыть файл программой
+deactivate Backend
+deactivate Frontend
+@enduml

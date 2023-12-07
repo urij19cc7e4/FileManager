@@ -1,0 +1,37 @@
+@startuml
+
+autonumber
+actor User
+participant "Frontend" as Frontend
+participant "Backend" as Backend
+participant "WinAPI" as WinAPI
+
+User -> Frontend: Клик ПКМ в свободном месте родительской папки
+
+activate Frontend
+Frontend --> User: Контекстное меню родительской папки
+
+User --> Frontend: Создать папку
+Frontend --> User: Введите имя папки
+User --> Frontend: Имя папки
+Frontend --> Backend: Имя папки допустимое?
+
+activate Backend
+Backend --> Frontend: Имя папки допустимое
+Frontend --> Backend: Есть права на запись в родительскую папку?
+Backend --> WinAPI: Есть права на запись в родительскую папку?
+
+activate WinAPI
+WinAPI --> Backend: Права на запись
+Backend --> Frontend: Права на запись
+Frontend --> Backend: Создать папку
+Backend --> WinAPI: Создать папку
+WinAPI --> Backend: Папка создана
+deactivate WinAPI
+
+Backend --> Frontend: Папка создана
+deactivate Backend
+
+Frontend --> User: Папка создана
+deactivate Frontend
+@enduml
