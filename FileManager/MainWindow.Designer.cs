@@ -1,7 +1,6 @@
-﻿
-namespace FileManager
+﻿namespace FileManager
 {
-	partial class MainWindow
+	public partial class MainWindow
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,85 +28,67 @@ namespace FileManager
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			//this.tabControl1 = new FileManager.TabControlClosable();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-			this.tableLayoutPanel1.SuspendLayout();
-			this.tabControl1.SuspendLayout();
-			this.tabPage1.SuspendLayout();
-			this.tableLayoutPanel2.SuspendLayout();
+			this.tableMW = new System.Windows.Forms.TableLayoutPanel();
+			this.tableVW = new System.Windows.Forms.TableLayoutPanel();
+			this.button1 = new System.Windows.Forms.Button();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.tableMW.SuspendLayout();
+			this.tableVW.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// tableLayoutPanel1
+			// tableMW
 			// 
-			this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-			this.tableLayoutPanel1.ColumnCount = 3;
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 240F));
-			this.tableLayoutPanel1.Controls.Add(this.tabControl1, 1, 0);
-			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.RowCount = 1;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(960, 480);
-			this.tableLayoutPanel1.TabIndex = 0;
+			this.tableMW.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+			this.tableMW.ColumnCount = 3;
+			this.tableMW.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+			this.tableMW.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableMW.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 245F));
+			this.tableMW.Controls.Add(this.tableVW, 2, 0);
+			this.tableMW.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableMW.Location = new System.Drawing.Point(0, 0);
+			this.tableMW.Margin = new System.Windows.Forms.Padding(0);
+			this.tableMW.Name = "tableMW";
+			this.tableMW.RowCount = 1;
+			this.tableMW.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableMW.Size = new System.Drawing.Size(960, 480);
+			this.tableMW.TabIndex = 0;
 			// 
-			// tabControl1
+			// tableVW
 			// 
-			this.tabControl1.Controls.Add(this.tabPage1);
-			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControl1.ItemSize = new System.Drawing.Size(125, 25);
-			this.tabControl1.Location = new System.Drawing.Point(167, 6);
-			this.tabControl1.Margin = new System.Windows.Forms.Padding(5);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(546, 468);
-			this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-			this.tabControl1.TabIndex = 0;
-			this.tabControl1.TabStop = false;
+			this.tableVW.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+			this.tableVW.ColumnCount = 1;
+			this.tableVW.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableVW.Controls.Add(this.button1, 0, 1);
+			this.tableVW.Controls.Add(this.textBox1, 0, 0);
+			this.tableVW.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableVW.Location = new System.Drawing.Point(714, 1);
+			this.tableVW.Margin = new System.Windows.Forms.Padding(0);
+			this.tableVW.Name = "tableVW";
+			this.tableVW.RowCount = 2;
+			this.tableVW.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableVW.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+			this.tableVW.Size = new System.Drawing.Size(245, 478);
+			this.tableVW.TabIndex = 0;
 			// 
-			// tabPage1
+			// button1
 			// 
-			this.tabPage1.Controls.Add(this.tableLayoutPanel2);
-			this.tabPage1.Location = new System.Drawing.Point(4, 29);
-			this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.tabPage1.Size = new System.Drawing.Size(538, 435);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "tabPage1";
-			this.tabPage1.UseVisualStyleBackColor = true;
+			this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.button1.Location = new System.Drawing.Point(60, 417);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(125, 40);
+			this.button1.TabIndex = 0;
+			this.button1.Text = "Start tests";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// tableLayoutPanel2
+			// textBox1
 			// 
-			this.tableLayoutPanel2.ColumnCount = 1;
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 0, 1);
-			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-			this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-			this.tableLayoutPanel2.RowCount = 2;
-			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel2.Size = new System.Drawing.Size(538, 435);
-			this.tableLayoutPanel2.TabIndex = 0;
-			// 
-			// flowLayoutPanel1
-			// 
-			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 45);
-			this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
-			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(528, 385);
-			this.flowLayoutPanel1.TabIndex = 0;
+			this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.textBox1.Location = new System.Drawing.Point(4, 4);
+			this.textBox1.Multiline = true;
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(237, 389);
+			this.textBox1.TabIndex = 1;
 			// 
 			// MainWindow
 			// 
@@ -115,25 +96,22 @@ namespace FileManager
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.ClientSize = new System.Drawing.Size(960, 480);
-			this.Controls.Add(this.tableLayoutPanel1);
+			this.Controls.Add(this.tableMW);
 			this.MinimumSize = new System.Drawing.Size(978, 527);
 			this.Name = "MainWindow";
 			this.Text = "File Manager";
-			this.tableLayoutPanel1.ResumeLayout(false);
-			this.tabControl1.ResumeLayout(false);
-			this.tabPage1.ResumeLayout(false);
-			this.tableLayoutPanel2.ResumeLayout(false);
+			this.tableMW.ResumeLayout(false);
+			this.tableVW.ResumeLayout(false);
+			this.tableVW.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-		//private FileManager.TabControlClosable tabControl1;
-		private System.Windows.Forms.TabControl tabControl1;
-		private System.Windows.Forms.TabPage tabPage1;
-		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+		private System.Windows.Forms.TableLayoutPanel tableMW;
+		private System.Windows.Forms.TableLayoutPanel tableVW;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.TextBox textBox1;
 	}
 }

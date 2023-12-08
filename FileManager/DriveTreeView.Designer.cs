@@ -2,14 +2,14 @@
 
 namespace FileManager
 {
-	public partial class TabControlClosable : TabControl
+	public partial class DriveTreeView : TreeView
 	{
 		private System.ComponentModel.IContainer components = null;
-		public delegate void OnHeaderCloseDelegate(object sender, CloseEventArgs e);
-		public event OnHeaderCloseDelegate OnClose;
 
 		protected override void Dispose(bool disposing)
 		{
+			Clean();
+
 			if (disposing && (components != null))
 			{
 				components.Dispose();
@@ -22,7 +22,7 @@ namespace FileManager
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
-			this.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+			this.MouseDoubleClick += DriveTreeView_MouseDoubleClick;
 		}
 
 		#endregion

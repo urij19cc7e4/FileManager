@@ -3,15 +3,22 @@ using System.Windows.Forms;
 
 namespace FileManager
 {
-	static class Program
+	public static class Program
 	{
+		public static MainWindow mainWindow;
+
+		public static string[] buffer;
+
+		public static bool delete;
+
 		[STAThread]
-		static void Main()
+		public static void Main()
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			var wnd = new MainWindow();
-			Application.Run(wnd);
+
+			mainWindow = new MainWindow();
+			Application.Run(mainWindow);
 		}
 	}
 }

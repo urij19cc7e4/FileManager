@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FileManager.DriveTreeView">
+    <Position X="0.5" Y="1.75" Width="2" />
+    <NestedTypes>
+      <Delegate Name="FileManager.DriveTreeView.Delegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DriveTreeView.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACIBAAAAAACAAAASgAAAAIAAAAAAAACAQAA=</HashCode>
+      <FileName>DriveTreeView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager.FileSize">
+    <Position X="3" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAEAAAAAAAAAAAAAAAKgkQAAAAAAAA=</HashCode>
+      <FileName>FileSize.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager.GetFileInfoCached">
+    <Position X="3" Y="10.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIEAAAAAAAAAQAAAAACAA=</HashCode>
+      <FileName>GetFileInfoCached.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager.ListViewColumnSorter" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAABAAEAAAEAAAAAAAAABAAAABACAAAAAA=</HashCode>
+      <FileName>ListViewColumnSorter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FileManager.MainWindow">
+    <Position X="0.5" Y="9.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAQAAAACAAAAAAAACAAABCAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager.Program">
+    <Position X="3" Y="12.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager.TabControlClosable">
+    <Position X="3" Y="1.75" Width="2" />
+    <NestedTypes>
+      <Delegate Name="FileManager.TabControlClosable.OnHeaderCloseDelegate" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAACIACAAQAAAAACBBAACBBAAAIAAIAIAAAAAACA=</HashCode>
+      <FileName>TabControlClosable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager.TabPageDirectory">
+    <Position X="5.5" Y="1.75" Width="2" />
+    <NestedTypes>
+      <Delegate Name="FileManager.TabPageDirectory.Delegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TabPageDirectory.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>QAgYhpAMSCAgoAQCQACIEyWTxUIRAMKAgwAUCAABygA=</HashCode>
+      <FileName>TabPageDirectory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager.WinAPI">
+    <Position X="8" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="FileManager.WinAPI.AssocF" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>WinAPI.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="FileManager.WinAPI.AssocStr" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>WinAPI.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Struct Name="FileManager.WinAPI.HDITEM" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>WinAPI.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="FileManager.WinAPI.SHFILEINFO" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>WinAPI.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AhBIZAABADCAAQAgBSAABAAQGEXAEEAEQRgGIIgiCtE=</HashCode>
+      <FileName>WinAPI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.TreeView" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Forms.TabPage" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Forms.TabControl" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

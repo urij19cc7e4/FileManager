@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -7,9 +8,54 @@ namespace FileManager
 {
 	public partial class TabControlClosable : TabControl
 	{
+		private readonly LinkedList<TabPage> tabOrder = new LinkedList<TabPage>();
+
+		public void CloseTab(TabPage tab)
+		{
+			tabOrder.Remove(tab);
+			TabPages.Remove(tab);
+			tab.Dispose();
+			SelectedTab = tabOrder.First.Next == null ? tabOrder.First.Value : tabOrder.First.Next.Value;
+		}
+
+		public void CreateTab(string dirPath)
+		{
+			TabPageDirectory tab = new TabPageDirectory(this, dirPath);
+
+			tab.SuspendLayout();
+			tab.Margin = new Padding(0);
+			tab.UseVisualStyleBackColor = true;
+			tab.ResumeLayout(false);
+
+			TabPages.Add(tab);
+
+			tabOrder.AddFirst(tab);
+			SelectedTab = tab;
+		}
+
+		public TabPageDirectory GetSelectedTab()
+		{
+			return (TabPageDirectory)SelectedTab;
+		}
+
 		public TabControlClosable()
 		{
 			InitializeComponent();
+
+			Selected += TabControlClosable_Selected;
+
+			OnClose += TabControlClosable_OnClose;
+		}
+
+		private void TabControlClosable_OnClose(object sender, CloseEventArgs e)
+		{
+			CloseTab(TabPages[e.TabIndex]);
+		}
+
+		private void TabControlClosable_Selected(object sender, TabControlEventArgs e)
+		{
+			tabOrder.Remove(e.TabPage);
+			tabOrder.AddFirst(e.TabPage);
 		}
 
 		protected override void OnDrawItem(DrawItemEventArgs e)
@@ -96,10 +142,7 @@ namespace FileManager
 						_Path.Dispose();
 					}
 					string str = TabPages[nIndex].Text;
-					StringFormat stringFormat = new StringFormat
-					{
-						Alignment = StringAlignment.Center
-					};
+					StringFormat stringFormat = new StringFormat { Alignment = StringAlignment.Center };
 					e.Graphics.DrawString(str, Font, new SolidBrush(TabPages[nIndex].ForeColor), tabTextArea, stringFormat);
 				}
 			}
@@ -245,14 +288,11 @@ namespace FileManager
 
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
-			if (!DesignMode)
-			{
-				RectangleF tabTextArea = GetTabRect(SelectedIndex);
-				tabTextArea = new RectangleF(tabTextArea.X + tabTextArea.Width - 22, 4, tabTextArea.Height - 3, tabTextArea.Height - 5);
-				Point pt = new Point(e.X, e.Y);
-				if (tabTextArea.Contains(pt))
-					OnClose?.Invoke(this, new CloseEventArgs(SelectedIndex));
-			}
+			RectangleF tabTextArea = GetTabRect(SelectedIndex);
+			tabTextArea = new RectangleF(tabTextArea.X + tabTextArea.Width - 22, 4, tabTextArea.Height - 3, tabTextArea.Height - 5);
+			Point pt = new Point(e.X, e.Y);
+			if (tabTextArea.Contains(pt))
+				OnClose?.Invoke(this, new CloseEventArgs(SelectedIndex));
 		}
 	}
 
