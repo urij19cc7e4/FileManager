@@ -1,0 +1,33 @@
+@startuml
+
+autonumber
+actor User
+participant "Frontend" as Frontend
+participant "Backend" as Backend
+participant "WinAPI" as WinAPI
+
+User -> Frontend: Клик ПКМ на файл или папку
+
+activate Frontend
+Frontend --> User: Контекстное меню файла или папки
+
+User --> Frontend: 'Действие'
+Frontend --> Backend: Есть права на выполнение?
+
+activate Backend
+Backend --> WinAPI: Есть права на выполнение?
+
+activate WinAPI
+WinAPI --> Backend: Права на выполнение
+Backend --> Frontend: Права на выполнение
+Frontend --> Backend: Выполнить действие в файловой системе
+Backend --> WinAPI: Выполнить действие в файловой системе
+WinAPI --> Backend: Действие выполнено
+deactivate WinAPI
+
+Backend --> Frontend: Действие выполнено
+deactivate Backend
+
+Frontend --> User: Действие выполнено
+deactivate Frontend
+@enduml

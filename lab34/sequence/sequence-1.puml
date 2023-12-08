@@ -1,0 +1,26 @@
+@startuml
+
+autonumber
+actor User
+participant "Frontend" as Frontend
+participant "Backend" as Backend
+participant "WinAPI" as WinAPI
+
+User -> Frontend: Двойной клик на папке
+
+activate Frontend
+Frontend --> Backend: Есть права на чтение?
+
+activate Backend
+Backend --> WinAPI: Есть права на чтение?
+
+activate WinAPI
+WinAPI --> Backend: Права на чтение
+deactivate WinAPI
+
+Backend --> Frontend: Права на чтение
+deactivate Backend
+
+Frontend --> User: Содержимое папки
+deactivate Frontend
+@enduml

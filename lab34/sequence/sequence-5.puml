@@ -1,0 +1,20 @@
+@startuml
+
+autonumber
+actor User
+participant "Frontend" as Frontend
+participant "Backend" as Backend
+participant "WinAPI" as WinAPI
+
+User -> Frontend: Клик в свободном месте папки
+
+activate Frontend
+Frontend --> User: Контекстное меню папки
+User -> Frontend: Клик ЛКМ 'Вид'
+Frontend --> User: Контекстное меню разворачивается
+User -> Frontend: Клик ЛКМ 'Таблица'
+Frontend --> User: Представление папки меняется на табличное
+User -> Frontend: Клик на столбце, по которому сортировать
+Frontend --> User: Элементы отсортированы по заданному критерию
+deactivate Frontend
+@enduml
